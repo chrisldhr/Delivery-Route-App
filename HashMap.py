@@ -9,10 +9,10 @@ class HashMap:
         self.map = [None] * self.size
 
     def _get_hash(self, key):
-        hash = 0
-        for char in str(key):
-            hash += ord(char)
-        return hash % self.size
+        # hash = 0
+        # for char in str(key):
+        #     hash += ord(char)
+        return int(key) % self.size
 
     def add(self, key, value):
         key_hash = self._get_hash(key)

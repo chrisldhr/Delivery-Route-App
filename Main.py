@@ -1,6 +1,7 @@
 from HashMap import HashMap
 from DataUpload import get_hash_map
 
+# With self.size = 40, pacakage 40 doesn't load?
 print(get_hash_map().keys())
 
 # h = HashMap()
