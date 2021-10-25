@@ -1,8 +1,15 @@
+#Name: Christopher Liu
+#ID: 001274582
+
 from HashMap import HashMap
-from DataUpload import get_hash_map
+from CsvReader import get_packages
+
 
 # With self.size = 40, pacakage 40 doesn't load?
-print(get_hash_map().keys())
+print(get_packages().print())
+print(get_packages().get(str(40)))
+
+# print(get_packages().get(1)[4])
 
 # h = HashMap()
 # h.add('Bob', '567-8888')

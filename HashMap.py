@@ -5,13 +5,10 @@
 
 class HashMap:
     def __init__(self):
-        self.size = 40
+        self.size = 10
         self.map = [None] * self.size
 
     def _get_hash(self, key):
-        # hash = 0
-        # for char in str(key):
-        #     hash += ord(char)
         return int(key) % self.size
 
     def add(self, key, value):
@@ -48,18 +45,19 @@ class HashMap:
                 return True
         return False
 
-    def keys(self):
-        arr = []
-        for i in range(0, len(self.map)):
-            if self.map[i]:
-                arr.append(self.map[i][0])
-        return arr
+    # def keys(self):
+    #     arr = []
+    #     for i in range(0, len(self.map)):
+    #         if self.map[i]:
+    #             arr.append(self.map[i][0])
+    #     return arr
 
     def print(self):
-        print('---TITLE---')
+        print('---PACKAGES---')
         for item in self.map:
             if item is not None:
                 print(str(item))
+
 
 
 
