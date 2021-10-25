@@ -1,11 +1,9 @@
 from HashMap import HashMap
 import csv
 
-hash_map = HashMap()
-
-
-with open('Data/Packages.csv') as file:
-    reader = csv.reader(file, delimiter=',')
+with open('Data/Packages.csv') as packages_file:
+    reader = csv.reader(packages_file, delimiter=',')
+    packages = HashMap()
 
     for row in reader:
         id = row[0]
@@ -20,11 +18,21 @@ with open('Data/Packages.csv') as file:
 
         value = [id, address, city, state, zip, deadline, size,
             note, status]
-        hash_map.add(id, value)
+        packages.add(id, value)
 
 def get_packages():
-    return hash_map
+    return packages
 
+with open('Data/Addresses.csv') as addresses_file:
+    reader = csv.reader(addresses_file, delimiter=',')
+    addresses = list(reader)
 
+def get_addresses():
+    return addresses
 
+with open('Data/Distances.csv') as distances_file:
+    reader = csv.reader(distances_file, delimiter=',')
+    distances = list(reader)
 
+def get_distances():
+    return distances

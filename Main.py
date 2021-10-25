@@ -3,13 +3,16 @@
 
 from HashMap import HashMap
 from CsvReader import get_packages
-
+from CsvReader import get_addresses
+from CsvReader import get_distances
+from Trucks import find_distance
 
 # With self.size = 40, pacakage 40 doesn't load?
 print(get_packages().print())
 print(get_packages().get(str(40)))
-
-# print(get_packages().get(1)[4])
+print(get_addresses())
+print(get_distances())
+print(find_distance(1,2))
 
 # h = HashMap()
 # h.add('Bob', '567-8888')
