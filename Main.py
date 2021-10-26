@@ -6,14 +6,18 @@ from CsvReader import get_packages
 from CsvReader import get_addresses
 from CsvReader import get_distances
 from Trucks import find_distance
+from Trucks import first_truck_route
+from Trucks import first_truck_best
+from Trucks import find_best_route
 
 # With self.size = 40, pacakage 40 doesn't load?
 print(get_packages().print())
 print(get_packages().get(str(40)))
 print(get_addresses())
 print(get_distances())
-print(find_distance(1,2))
-
+print(first_truck_route)
+print(first_truck_best)
+# print(find_best_route)
 # h = HashMap()
 # h.add('Bob', '567-8888')
 # h.add('Ming', '293-6753')
