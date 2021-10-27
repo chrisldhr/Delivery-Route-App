@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:/Users/A/PycharmProjects/C950/Main.py", line 8, in <module>
+    from Trucks import find_distance
+  File "C:\Users\A\PycharmProjects\C950\Trucks.py", line 54, in <module>
+    first_truck_best = find_best_route(first_truck_route)
+  File "C:\Users\A\PycharmProjects\C950\Trucks.py", line 29, in find_best_route
+    route_distances = list(map((lambda address: find_distance(current[-1],address)), addresses))
+  File "C:\Users\A\PycharmProjects\C950\Trucks.py", line 29, in <lambda>
+    route_distances = list(map((lambda address: find_distance(current[-1],address)), addresses))
+  File "C:\Users\A\PycharmProjects\C950\Trucks.py", line 22, in find_distance
+    return float(get_distances()[row][column])
+ValueError: could not convert string to float:
