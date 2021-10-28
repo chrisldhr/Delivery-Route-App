@@ -30,7 +30,7 @@ def find_distance(address_x, address_y):
 
 
 def find_best_route(addresses):
-    hub = "4001 South 700 East"
+    hub = [0, "4001 South 700 East"]
     best_route = [hub]
     total_distance = 0.0
 

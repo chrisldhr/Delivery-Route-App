@@ -13,6 +13,8 @@ from Trucks import third_truck_best
 from Delivery import first_truck_distances
 from Delivery import first_truck_times
 from Delivery import first_truck_converted_times
+from Delivery import second_truck_converted_times
+from Delivery import third_truck_converted_times
 
 print(get_packages().print())
 print(get_packages().get(str(40)))
@@ -26,6 +28,8 @@ print(third_truck_best)
 print(first_truck_distances)
 print(first_truck_times)
 print(first_truck_converted_times)
+print(second_truck_converted_times)
+print(third_truck_converted_times)
 
 
 

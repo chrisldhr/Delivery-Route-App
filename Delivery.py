@@ -2,12 +2,14 @@ import datetime
 
 from Trucks import find_distance
 from Trucks import first_truck_best
+from Trucks import second_truck_best
+from Trucks import third_truck_best
 
 current_time = 0.0
 truck_speed = 18  # miles per hour
 first_truck_start = 480.0  # 08:00 in minutes
-second_truck_start = 540.16  # 9.10 in minutes???
-third_truck_start = 480 + (34 / truck_speed * 60)  # 34 is truck 1 total distance
+second_truck_start = 550.0  # 9.10 in minutes???
+third_truck_start = 600.0 # 10:00 in minutes
 
 def distance_traveled(addresses):
     distances = []
@@ -38,4 +40,10 @@ first_truck_distances = distance_traveled(first_truck_best)
 first_truck_times = times_delivered(first_truck_start, first_truck_distances)
 first_truck_converted_times = convert_times(first_truck_times)
 
+second_truck_distances = distance_traveled(second_truck_best)
+second_truck_times = times_delivered(second_truck_start, second_truck_distances)
+second_truck_converted_times = convert_times(second_truck_times)
 
+third_truck_distances = distance_traveled(third_truck_best)
+third_truck_times = times_delivered(third_truck_start, third_truck_distances)
+third_truck_converted_times = convert_times(third_truck_times)
