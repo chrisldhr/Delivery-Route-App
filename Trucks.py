@@ -30,12 +30,12 @@ def find_distance(address_x, address_y):
 
 
 def find_best_route(addresses):
-    hub = [0, "4001 South 700 East"]
+    hub = [0,"4001 South 700 East"]
     best_route = [hub]
     total_distance = 0.0
 
     while True:
-        route_distances = list(map((lambda address: find_distance(best_route[-1], address)), addresses))
+        route_distances = list(map((lambda address: find_distance(best_route[-1][1], address[1])), addresses))
         shortest_distance = min(route_distances)
         next_closest_index = route_distances.index(shortest_distance)
         next_closest_address = addresses[next_closest_index]
@@ -51,13 +51,13 @@ def find_best_route(addresses):
     return best_route
 
 
-first_truck_route = list(map((lambda package: get_street_address(package)), first_truck_packages))
+first_truck_route = list(map((lambda package: [package, get_street_address(package)]), first_truck_packages))
 first_truck_best = find_best_route(first_truck_route)
 
-second_truck_route = list(map((lambda package: get_street_address(package)), second_truck_packages))
+second_truck_route = list(map((lambda package: [package, get_street_address(package)]), second_truck_packages))
 second_truck_best = find_best_route(second_truck_route)
 
-third_truck_route = list(map((lambda package: get_street_address(package)), third_truck_packages))
+third_truck_route = list(map((lambda package: [package, get_street_address(package)]), third_truck_packages))
 third_truck_best = find_best_route(third_truck_route)
 
 
