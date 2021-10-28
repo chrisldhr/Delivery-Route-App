@@ -10,9 +10,10 @@ from Trucks import first_truck_route
 from Trucks import first_truck_best
 from Trucks import second_truck_best
 from Trucks import third_truck_best
-from Trucks import find_best_route
+from Delivery import first_truck_distances
+from Delivery import first_truck_times
+from Delivery import first_truck_converted_times
 
-# With self.size = 40, pacakage 40 doesn't load?
 print(get_packages().print())
 print(get_packages().get(str(40)))
 print(get_addresses())
@@ -22,21 +23,9 @@ print(find_distance("195 W Oakland Ave","2010 W 500 S"))
 print(first_truck_best)
 print(second_truck_best)
 print(third_truck_best)
-# print(find_best_route)
-# h = HashMap()
-# h.add('Bob', '567-8888')
-# h.add('Ming', '293-6753')
-# h.add('Ming', '333-8233')
-# h.add('Ankit', '293-8625')
-# h.add('Aditya', '852-6551')
-# h.add('Alicia', '632-4123')
-# h.add('Mike', '567-2188')
-# h.add('Aditya', '777-8888')
-# h.print()
-# h.delete('Bob')
-# h.print()
-# print('Ming: ' + h.get('Ming'))
-# print(h.keys())
+print(first_truck_distances)
+print(first_truck_times)
+print(first_truck_converted_times)
 
 
 

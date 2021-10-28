@@ -59,5 +59,12 @@ class HashMap:
                 print(str(item))
 
 
-
-
+    def update(self, key, value):
+        key_hash = self._get_hash(key)
+        if self.map[key_hash] != None:
+            for pair in self.map[key_hash]:
+                if pair[0] == key:
+                    pair[1] = value
+                    return True
+                return False
+        return False
