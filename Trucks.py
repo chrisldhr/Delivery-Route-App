@@ -3,8 +3,8 @@ from CsvReader import get_distances
 from CsvReader import get_packages
 
 first_truck_packages = [1, 13, 14, 15, 16, 19, 20, 29, 30, 31, 34, 37, 40]
-second_truck_packages = [3, 6, 18, 25, 36, 38, 2, 4, 5, 7, 8, 10, 11, 12, 17, 21, 22, 23, 24, 26, 28, 32, 33]
-third_truck_packages = [9, 27, 35, 39]
+second_truck_packages = [3, 6, 18, 36, 38, 2, 4, 5, 7, 8, 10, 11, 12, 17, 21, 22, 23, 24, 26, 28, 32, 33]
+third_truck_packages = [9, 25, 27, 35, 39]
 
 
 def get_street_address(int):

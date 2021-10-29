@@ -58,7 +58,6 @@ class HashMap:
             if item is not None:
                 print(str(item))
 
-
     def update(self, key, value):
         key_hash = self._get_hash(key)
         if self.map[key_hash] != None:
