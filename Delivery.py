@@ -6,10 +6,10 @@ from Trucks import second_truck_best
 from Trucks import third_truck_best
 from CsvReader import get_packages
 
-current_time = 0.0
+# current_time = 0.0
 truck_speed = 18  # miles per hour
 first_truck_start = 480.0  # 08:00 in minutes
-second_truck_start = 550.0  # 9.10 in minutes???
+second_truck_start = 550.0  # 9.10 in minutes
 third_truck_start = 600.0 # 10:00 in minutes
 
 def distance_traveled(addresses):
@@ -56,6 +56,9 @@ def update_package_address(package_id, new_street, new_zip):
     get_packages().update(id, value)
 
 def update_package_status(package_id, new_status):
+    # if package_id == 0:
+    #     return False
+    # else:
     package = get_packages().get(str(package_id))
 
     id = package[0]
@@ -73,18 +76,28 @@ def update_package_status(package_id, new_status):
 
     get_packages().update(id, value)
 
-def update_truck_packages(current_time, truck_times):
-    for time in truck_times:
-        if time[1] < current_time:
+def convert_time_to_float(time):
+    float = 0.0
+    (hrs, mins, secs) = time.split(':')
+    float += (int(hrs) * 60) + int(mins) + (int(secs) / 60)
+    return float
+
+def update_truck_packages(current_time, truck_converted_times):
+    current = convert_time_to_float(current_time)
+    # time = truck_times[0]
+    # return current
+    for time in truck_converted_times:
+        if convert_time_to_float(time[1]) < current and time[0] != 0:
             id = time[0]
-            new_status = "Delivered at: " + first_truck_converted_times[id][1]
-            update_package_status(id, new_status)
+            # return [time,id, current]
+            new_status = "Delivered at: " + time[1]
+            update_package_status(str(id), new_status)
 
 
 first_truck_distances = distance_traveled(first_truck_best)
 first_truck_times = times_delivered(first_truck_start, first_truck_distances)
 first_truck_converted_times = convert_times(first_truck_times)
-first_truck_update = update_truck_packages(740.0, first_truck_times)
+first_truck_update = update_truck_packages("12:17:00", first_truck_converted_times)
 
 second_truck_distances = distance_traveled(second_truck_best)
 second_truck_times = times_delivered(second_truck_start, second_truck_distances)

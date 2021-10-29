@@ -10,7 +10,8 @@ from Trucks import first_truck_route
 from Trucks import first_truck_best
 from Trucks import second_truck_best
 from Trucks import third_truck_best
-from Delivery import first_truck_distances, second_truck_times, third_truck_times, first_truck_update
+from Delivery import first_truck_distances, second_truck_times, third_truck_times, \
+    update_package_status, first_truck_update
 from Delivery import first_truck_times
 from Delivery import first_truck_converted_times
 from Delivery import second_truck_converted_times
@@ -36,7 +37,8 @@ print(third_truck_times)
 print(first_truck_converted_times)
 print(second_truck_converted_times)
 print(third_truck_converted_times)
-first_truck_update
-print(get_packages().print())
 
+print(get_packages().print())
+print(first_truck_update)
+print(get_packages().print())
 
