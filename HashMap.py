@@ -64,6 +64,6 @@ class HashMap:
             for pair in self.map[key_hash]:
                 if pair[0] == key:
                     pair[1] = value
-                    return True
-                return False
-        return False
+        #             return True
+        #         return False
+        # return False
