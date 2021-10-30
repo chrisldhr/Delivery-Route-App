@@ -45,12 +45,12 @@ class HashMap:
                 return True
         return False
 
-    # def keys(self):
-    #     arr = []
-    #     for i in range(0, len(self.map)):
-    #         if self.map[i]:
-    #             arr.append(self.map[i][0])
-    #     return arr
+    def keys(self):
+        arr = []
+        for i in range(0, len(self.map)):
+            if self.map[i]:
+                arr.append(self.map[i][0])
+        return arr
 
     def print(self):
         print('---PACKAGES---')
