@@ -8,14 +8,18 @@ from Delivery import first_truck_distances, second_truck_times, third_truck_time
     second_truck_converted_times, third_truck_converted_times, first_truck_times
 from Status import get_status
 
-print(first_truck_times)
-print("")
-print(first_truck_converted_times)
-print(second_truck_converted_times)
-print(third_truck_converted_times)
-print("")
+# print(first_truck_times)
+# print("")
+# print(first_truck_converted_times)
+# print(second_truck_converted_times)
+# print(third_truck_converted_times)
+# print("")
 # first_truck_update()
-print(get_status("8:30:00"))
+try:
+    current_time = input("Enter a time after 08:00:00 to check package status: ")
+    print(get_status(current_time))
+except:
+    print("Please enter hours, minutes and seconds in the format of hrs:mins:secs")
 # print(get_packages().print())
 
 # print(get_packages().print())
