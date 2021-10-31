@@ -14,7 +14,7 @@ with open('Data/Packages.csv') as packages_file:
         deadline = row[5]
         size = row[6]
         note = row[7]
-        status = 'At the hub'
+        status = 'AT THE HUB'
 
         value = [id, address, city, state, zip, deadline, size,
             note, status]

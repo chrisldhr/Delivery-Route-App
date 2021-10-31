@@ -5,7 +5,7 @@ from HashMap import HashMap
 from CsvReader import get_packages, get_addresses, get_distances
 from Trucks import find_distance, first_truck_route,first_truck_best,second_truck_best,third_truck_best
 from Delivery import first_truck_distances, second_truck_times, third_truck_times, first_truck_converted_times, \
-    second_truck_converted_times, third_truck_converted_times, update_package_address, first_truck_times, first_truck_update
+    second_truck_converted_times, third_truck_converted_times, first_truck_times
 from Status import get_status
 
 print(first_truck_times)
@@ -15,7 +15,7 @@ print(second_truck_converted_times)
 print(third_truck_converted_times)
 print("")
 # first_truck_update()
-print(get_status("12:30:00"))
+print(get_status("8:30:00"))
 # print(get_packages().print())
 
 # print(get_packages().print())
