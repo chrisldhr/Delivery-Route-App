@@ -47,10 +47,10 @@ def get_status(string_time):
 
         if delivery_time <= current_time:
             total_distance += status[8]
-            status[10] = "DELIVERED"
+            status[11] = "DELIVERED"
 
         if start_time <= current_time and delivery_time > current_time:
-            status[10] = "EN ROUTE"
+            status[11] = "EN ROUTE"
 
         # package_id = time[0]
         # delivery_time = convert_str_to_float(time[1])
