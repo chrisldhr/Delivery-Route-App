@@ -1,16 +1,19 @@
-# Hash Map
-# Source: Python: Creating a HASHMAP using Lists,
-# Joe James, Jan 22, 2016
-# https://www.youtube.com/watch?v=9HFbhPscPU0
+# Hash Map that stores data from csv files.
 
 class HashMap:
+    # Constructor initialization
+    # Space-time complexity: O(1)
     def __init__(self):
         self.size = 10
         self.map = [None] * self.size
 
+    # Hash key creation
+    # Space-time complexity: O(1)
     def _get_hash(self, key):
         return int(key) % self.size
 
+    # Insertion of package data in to hash map
+    # Space-time complexity: O(N)
     def add(self, key, value):
         key_hash = self._get_hash(key)
         key_value = [key, value]
@@ -26,6 +29,8 @@ class HashMap:
             self.map[key_hash].append(key_value)
             return True
 
+    # Look up of a single package
+    # Space-time complexity: O(N)
     def get(self, key):
         key_hash = self._get_hash(key)
         if self.map[key_hash] is not None:
@@ -34,6 +39,17 @@ class HashMap:
                     return pair[1]
         return None
 
+    # Update data of a single package
+    # Space-time complexity: O(N)
+    def update(self, key, value):
+        key_hash = self._get_hash(key)
+        if self.map[key_hash] != None:
+            for pair in self.map[key_hash]:
+                if pair[0] == key:
+                    pair[1] = value
+
+    # Remove data of a single package
+    # Space-time complexity: O(N)
     def delete(self, key):
         key_hash = self._get_hash(key)
 
@@ -45,25 +61,4 @@ class HashMap:
                 return True
         return False
 
-    def keys(self):
-        arr = []
-        for i in range(0, len(self.map)):
-            if self.map[i]:
-                arr.append(self.map[i][0])
-        return arr
 
-    def print(self):
-        print('---PACKAGES---')
-        for item in self.map:
-            if item is not None:
-                print(str(item))
-
-    def update(self, key, value):
-        key_hash = self._get_hash(key)
-        if self.map[key_hash] != None:
-            for pair in self.map[key_hash]:
-                if pair[0] == key:
-                    pair[1] = value
-        #             return True
-        #         return False
-        # return False

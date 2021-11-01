@@ -1,56 +1,30 @@
-#Name: Christopher Liu
-#ID: 001274582
+# Name: Christopher Liu
+# ID: 001274582
 
-from HashMap import HashMap
-from CsvReader import get_packages, get_addresses, get_distances
-from Trucks import find_distance, first_truck_route,first_truck_best,second_truck_best,third_truck_best
-from Delivery import first_truck_distances, second_truck_times, third_truck_times, first_truck_converted_times, \
-    second_truck_converted_times, third_truck_converted_times, first_truck_times
+from CsvReader import get_packages
 from Status import get_status
 
-# print(first_truck_times)
-# print("")
-# print(first_truck_converted_times)
-# print(second_truck_converted_times)
-# print(third_truck_converted_times)
-# print("")
-# first_truck_update()
+# User interface for the command line in the console.
+# Allows user to input time and get status of all packages.
+# Allows user to get status of single package.
+# Space-time complexity: O(1)
+
 def user_interface():
     current_time = ""
     try:
-        current_time = input("Please enter a time after 08:00:00 to check package status: \n")
+        current_time = input("Please enter a time [hrs:mins:secs] after 08:00:00 to check package status: \n")
         print(get_status(current_time))
     except:
         print("Please enter hours, minutes and seconds in the format of hrs:mins:secs\n")
+        exit()
+
     try:
         package_id = input("Enter a package id to check package status: \n")
-        print ("Current time: " + current_time)
+        print("Current time: " + current_time)
         print(get_packages().get(str(package_id)))
     except:
         print("Please enter a number between 1 and 40 for the package id\n")
+        exit()
+
 
 user_interface()
-# print(get_packages().print())
-
-# print(get_packages().print())
-# print(get_packages().get(str(40)))
-# print(get_addresses())
-# print(get_distances())
-# print(first_truck_route)
-# print(find_distance("195 W Oakland Ave","2010 W 500 S"))
-# print(first_truck_best)
-# print(second_truck_best)
-# print(third_truck_best)
-# print(get_packages().print())
-# print(update_package_address(str(9),"410 S State St.", "84111"))
-# print(get_packages().print())
-# print(first_truck_distances)
-
-# print(second_truck_times)
-# print(third_truck_times)
-
-# print(get_packages().print())
-# print(first_truck_update)
-# print(first_truck_update)
-# print(get_packages().print())
-

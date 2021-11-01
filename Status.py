@@ -1,13 +1,18 @@
+# Module to update wrong address and create a list of statuses for packages
+
 from CsvReader import get_packages
 from Delivery import first_truck_distances
 
+# Conversion of string time to float time
+# Space-time complexity: O(1)
 def convert_str_to_float(time):
     float = 0.0
     (hrs, mins, secs) = time.split(':')
     float += (int(hrs) * 60) + int(mins) + (int(secs) / 60)
     return float
 
-# print(update_package_address(str(9),"410 S State St.", "84111"))
+# Update of package address
+# Space-time complexity: O(1)
 def update_package_address(package_id, new_street, new_zip):
     package = get_packages().get(str(package_id))
 
@@ -25,20 +30,22 @@ def update_package_address(package_id, new_street, new_zip):
     status = package[11]
 
     value = [id, address, city, state, zip, deadline, size,
-    note, distance, start_time, time, status]
+             note, distance, start_time, time, status]
 
     get_packages().update(id, value)
 
+# Creation of list of statuses for all packages
+# Space-time complexity: O(N)
 def get_status(string_time):
     current_time = convert_str_to_float(string_time)
     total_distance = 0.0
 
     if current_time >= 620.0:
-        update_package_address(str(9),"410 S State St.", "84111")
+        update_package_address(str(9), "410 S State St.", "84111")
 
     statuses = []
 
-    for i in range(1,41):
+    for i in range(1, 41):
         statuses.append(get_packages().get(str(i)))
 
     for status in statuses:
@@ -52,11 +59,4 @@ def get_status(string_time):
         if start_time <= current_time and delivery_time > current_time:
             status[11] = "|| EN ROUTE ||"
 
-        # package_id = time[0]
-        # delivery_time = convert_str_to_float(time[1])
-        # for status in statuses:
-        #     if current_time > delivery_time and status[0] == package_id:
-        #          statuses[8] = "DELIVERED AT: " + time[1]
-
-    return '\n'.join(map(str,statuses)) + "\n\nTOTAL DISTANCE: " + str(total_distance.__round__(4)) + " miles\n"
-    # return [statuses[package_id], current_time, delivery_time, package_id]
+    return '\n'.join(map(str, statuses)) + "\n\nTOTAL DISTANCE: " + str(total_distance.__round__(4)) + " miles\n"
