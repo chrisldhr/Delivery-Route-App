@@ -4,7 +4,19 @@
 from CsvReader import get_packages
 from Status import get_status
 
-# User interface for the command line in the console.
+# The program starts with the module CsvReader.py.
+# It loads the data from the csv files in the data folder into a hashmap and lists.
+# The hashmap data structure and functions are determined by the module HashMap.py.
+# The Trucks.py module then manually loads the packages into the trucks where
+# addresses and distances are calculated.
+# With those calculations, the nearest neighbor algorithm is used to determine
+# the best route for each truck.
+# The Delivery.py module determines the times and distance for when the packages
+# are delivered, and adds them to the package data in the hashmap.
+# The Status.py module takes an input of time and provides the status of the
+# packages (at the hub, en route, or delivered).
+
+# User interface for the console command line.
 # Allows user to input time and get status of all packages.
 # Allows user to get status of single package.
 # Space-time complexity: O(1)
