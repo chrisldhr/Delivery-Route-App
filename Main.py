@@ -16,7 +16,7 @@ from Status import get_status
 # The Status.py module takes an input of time and provides the status of the
 # packages (at the hub, en route, or delivered).
 
-# User interface for the console command line.
+# The following method is the user interface for the console.
 # Allows user to input time and get status of all packages.
 # Allows user to get status of single package.
 # Space-time complexity: O(1)
